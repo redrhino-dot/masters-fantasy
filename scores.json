@@ -1,0 +1,25 @@
+{
+  "currentRound": "R1",
+  "lastUpdated": "23:13 UTC",
+  "source": "R1 in progress",
+  "cutLine": null,
+  "players": {
+    "Xander Schauffele": { "position": 7,  "cut": false, "live": false },
+    "Tommy Fleetwood":   { "position": 11, "cut": false, "live": false },
+    "Harris English":    { "position": 17, "cut": false, "live": true  },
+    "Charl Schwartzel":  { "position": 49, "cut": false, "live": false },
+    "Jon Rahm":          { "position": 74, "cut": false, "live": true  },
+    "Tyrrell Hatton":    { "position": 34, "cut": false, "live": true  },
+    "Cameron Smith":     { "position": 41, "cut": false, "live": false },
+    "Dustin Johnson":    { "position": 34, "cut": false, "live": false },
+    "Matt Fitzpatrick":  { "position": 41, "cut": false, "live": false },
+    "JJ Spaun":          { "position": 41, "cut": false, "live": true  },
+    "Aaron Rai":         { "position": 11, "cut": false, "live": false },
+    "Cameron Young":     { "position": 34, "cut": false, "live": false },
+    "Marco Penge":       { "position": 65, "cut": false, "live": true  },
+    "Samuel Stevens":    { "position": 17, "cut": false, "live": false },
+    "Bryson DeChambeau": { "position": 57, "cut": false, "live": false },
+    "Chris Gotterup":    { "position": 17, "cut": false, "live": true  },
+    "Sergio Garcia":     { "position": 17, "cut": false, "live": false }
+  }
+}
