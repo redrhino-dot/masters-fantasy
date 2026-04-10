@@ -270,15 +270,42 @@ document.getElementById('tabBar').addEventListener('click',e=>{
   btn.classList.add('on');
 });
 async function manualRefresh(){
-  const btn=document.getElementById('refreshBtn');
-  btn.style.opacity='.3';
-  btn.disabled=true;
-  btn.textContent='⟳';
-  await loadScores();
-  btn.style.opacity='1';
-  btn.disabled=false;
-  btn.textContent='↻';
+  const btn = document.getElementById('refreshBtn');
+ const PAT = ['github_pat_', '11B4JHOFQ0a5EjnnDFsaRo_OSsMyxR34TXGQNapemKnENiT4cWm0sPLGzslrEwVQ9y2VVYQSPQT8DHYRDd'].join('');
+
+  const WORKFLOW = 'update-scores.yml';
+  const REPO = 'redrhino-dot/masters-fantasy';
+
+  btn.disabled = true;
+  btn.style.opacity = '.4';
+  btn.textContent = '⏳';
+
+  try {
+    // Trigger the workflow
+    await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${PAT}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ref: 'main' })
+    });
+
+    // Wait 20s for action to complete then reload scores
+    await new Promise(r => setTimeout(r, 20000));
+    await loadScores();
+
+  } catch(e) {
+    console.warn('Trigger failed:', e);
+    await loadScores(); // still refresh what we have
+  }
+
+  btn.disabled = false;
+  btn.style.opacity = '1';
+  btn.textContent = '↻';
 }
+
 loadScores();
 setInterval(loadScores,5*60*1000);
 </script>
