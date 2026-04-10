@@ -1,11 +1,10 @@
 {
-  "currentRound": "R1",
-  "lastUpdated": "02:02 UTC",
+  "currentRound": "R4",
+  "lastUpdated": "01:13 UTC",
   "source": "ESPN HTML",
-  "cutLine": null,
   "players": {
     "Xander Schauffele": {
-      "position": 5,
+      "position": 6,
       "cut": false,
       "live": false
     },
@@ -15,12 +14,12 @@
       "live": false
     },
     "Harris English": {
-      "position": 500,
+      "position": 33,
       "cut": false,
       "live": false
     },
     "Charl Schwartzel": {
-      "position": 500,
+      "position": 48,
       "cut": false,
       "live": false
     },
@@ -35,12 +34,12 @@
       "live": false
     },
     "Cameron Smith": {
-      "position": 500,
+      "position": 40,
       "cut": false,
       "live": false
     },
     "Dustin Johnson": {
-      "position": 500,
+      "position": 33,
       "cut": false,
       "live": false
     },
@@ -50,7 +49,7 @@
       "live": false
     },
     "JJ Spaun": {
-      "position": 500,
+      "position": 40,
       "cut": false,
       "live": false
     },
@@ -60,7 +59,7 @@
       "live": false
     },
     "Cameron Young": {
-      "position": 500,
+      "position": 33,
       "cut": false,
       "live": false
     },
@@ -70,17 +69,17 @@
       "live": false
     },
     "Samuel Stevens": {
-      "position": 500,
+      "position": 17,
       "cut": false,
       "live": false
     },
     "Bryson DeChambeau": {
-      "position": 500,
+      "position": 56,
       "cut": false,
       "live": false
     },
     "Chris Gotterup": {
-      "position": 500,
+      "position": 17,
       "cut": false,
       "live": false
     },
