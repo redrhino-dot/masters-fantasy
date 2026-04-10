@@ -1,6 +1,6 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "15:45 BST",
+  "lastUpdated": "16:05 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -24,7 +24,7 @@
       "r4": "--"
     },
     "Harris English": {
-      "position": 29,
+      "position": 30,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -34,7 +34,7 @@
       "r4": "--"
     },
     "Charl Schwartzel": {
-      "position": 45,
+      "position": 46,
       "cut": false,
       "live": false,
       "toPar": "+3",
@@ -44,7 +44,7 @@
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 57,
+      "position": 56,
       "cut": false,
       "live": false,
       "toPar": "+5",
@@ -54,7 +54,7 @@
       "r4": "--"
     },
     "Tyrrell Hatton": {
-      "position": 19,
+      "position": 20,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -74,7 +74,7 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 29,
+      "position": 30,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -94,7 +94,7 @@
       "r4": "--"
     },
     "JJ Spaun": {
-      "position": 45,
+      "position": 46,
       "cut": false,
       "live": false,
       "toPar": "+3",
@@ -114,7 +114,7 @@
       "r4": "--"
     },
     "Cameron Young": {
-      "position": 29,
+      "position": 30,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -164,10 +164,10 @@
       "r4": "--"
     },
     "Sergio Garcia": {
-      "position": 45,
+      "position": 40,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+2",
       "r1": "72",
       "r2": "--",
       "r3": "--",
