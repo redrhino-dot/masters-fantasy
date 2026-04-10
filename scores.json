@@ -1,6 +1,6 @@
 {
   "currentRound": "R1",
-  "lastUpdated": "12:51 BST",
+  "lastUpdated": "12:52 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -137,7 +137,7 @@
       "position": 17,
       "cut": false,
       "live": false,
-      "toPar": "E",
+      "toPar": "+4",
       "r1": "72",
       "r2": "--",
       "r3": "--",
