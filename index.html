@@ -271,8 +271,6 @@ document.getElementById('tabBar').addEventListener('click',e=>{
 });
 async function manualRefresh(){
   const btn = document.getElementById('refreshBtn');
- const PAT = ['github_pat_', '11B4JHOFQ0a5EjnnDFsaRo_OSsMyxR34TXGQNapemKnENiT4cWm0sPLGzslrEwVQ9y2VVYQSPQT8DHYRDd'].join('');
-
   const WORKFLOW = 'update-scores.yml';
   const REPO = 'redrhino-dot/masters-fantasy';
 
@@ -281,7 +279,9 @@ async function manualRefresh(){
   btn.textContent = '⏳';
 
   try {
-    // Trigger the workflow
+    const cfg = await fetch('./config.json?t='+Date.now()).then(r=>r.json());
+    const PAT = cfg.pat;
+
     await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`, {
       method: 'POST',
       headers: {
@@ -292,13 +292,17 @@ async function manualRefresh(){
       body: JSON.stringify({ ref: 'main' })
     });
 
-    // Wait 20s for action to complete then reload scores
     await new Promise(r => setTimeout(r, 20000));
     await loadScores();
 
   } catch(e) {
     console.warn('Trigger failed:', e);
-    await loadScores(); // still refresh what we have
+    await loadScores();
+  }
+
+  btn.disabled = false;
+  btn.style.opacity = '1';
+  btn.textContent = '↻';
   }
 
   btn.disabled = false;
