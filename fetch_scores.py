@@ -12,11 +12,25 @@ TEAM_PLAYERS = [
     'Bryson DeChambeau', 'Chris Gotterup', 'Sergio Garcia'
 ]
 
-ALIASES = {
-    'jj spaun':          'JJ Spaun',
-    'j.j. spaun':        'JJ Spaun',
-    'sam stevens':       'Samuel Stevens',
-    'bryson dechambeau': 'Bryson DeChambeau',
+SLUG_MAP = {
+    'xander-schauffele':  'Xander Schauffele',
+    'tommy-fleetwood':    'Tommy Fleetwood',
+    'harris-english':     'Harris English',
+    'charl-schwartzel':   'Charl Schwartzel',
+    'jon-rahm':           'Jon Rahm',
+    'tyrrell-hatton':     'Tyrrell Hatton',
+    'cameron-smith':      'Cameron Smith',
+    'dustin-johnson':     'Dustin Johnson',
+    'matt-fitzpatrick':   'Matt Fitzpatrick',
+    'jj-spaun':           'JJ Spaun',
+    'aaron-rai':          'Aaron Rai',
+    'cameron-young':      'Cameron Young',
+    'marco-penge':        'Marco Penge',
+    'sam-stevens':        'Samuel Stevens',
+    'samuel-stevens':     'Samuel Stevens',
+    'bryson-dechambeau':  'Bryson DeChambeau',
+    'chris-gotterup':     'Chris Gotterup',
+    'sergio-garcia':      'Sergio Garcia',
 }
 
 HEADERS = {
@@ -28,22 +42,6 @@ HEADERS = {
     'Referer': 'https://www.espn.com/golf/',
 }
 
-def normalize(s):
-    nfkd = unicodedata.normalize('NFKD', s)
-    return ''.join(c for c in nfkd if not unicodedata.combining(c)).strip()
-
-def clean(s):
-    return normalize(s).lower().replace('.','').replace('-',' ').replace('\u00a0',' ').strip()
-
-def resolve(espn_name):
-    k = clean(espn_name)
-    if k in ALIASES:
-        return ALIASES[k]
-    for p in TEAM_PLAYERS:
-        if clean(p) == k:
-            return p
-    return None
-
 def parse_pos(t):
     t = t.strip().upper()
     if t in ('CUT','MC','WD','DQ','MDF','DNF','RTD'):
@@ -54,22 +52,19 @@ def parse_pos(t):
 def parse(html):
     scores = {}
 
-    # Find each player anchor, then look BACKWARD for their position.
-    # Works with both single and double quoted HTML attributes.
-    name_re = re.compile(r'leaderboardplayername[^>]+>([^<]+)</a>')
+    # Match player profile URLs — present regardless of HTML quote style
+    url_re = re.compile(r'espn\.com/golf/player/id/\d+/([^"\'>\s&]+)')
 
-    for m in name_re.finditer(html):
-        name_raw = m.group(1).strip()
-        our = resolve(name_raw)
-        if not our:
+    for m in url_re.finditer(html):
+        slug = m.group(1).rstrip('/')
+        our = SLUG_MAP.get(slug)
+        if not our or our in scores:
             continue
-
-        # Scan up to 1500 chars before the anchor for a position value
-        before = html[max(0, m.start() - 1500):m.start()]
+        # Look backward up to 1200 chars for a position value
+        before = html[max(0, m.start() - 1200):m.start()]
         pos_hits = re.findall(r'>[ \t]*(T?\d+|CUT|MC|WD|DQ|MDF|DNF)[ \t]*<', before)
         pos_text = pos_hits[-1] if pos_hits else None
         pos, cut = parse_pos(pos_text) if pos_text else (None, False)
-
         scores[our] = {'position': pos, 'cut': cut, 'live': False}
 
     current_round = 'R1'
