@@ -1,6 +1,6 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "12:56 BST",
+  "lastUpdated": "13:33 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -44,7 +44,7 @@
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 73,
+      "position": 72,
       "cut": false,
       "live": false,
       "toPar": "+6",
@@ -124,7 +124,7 @@
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 56,
+      "position": 53,
       "cut": false,
       "live": false,
       "toPar": "+4",
@@ -134,7 +134,7 @@
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 17,
+      "position": 1,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -144,7 +144,7 @@
       "r4": "--"
     },
     "Bryson DeChambeau": {
-      "position": 56,
+      "position": 53,
       "cut": false,
       "live": false,
       "toPar": "+4",
@@ -154,7 +154,7 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 17,
+      "position": 16,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -164,7 +164,7 @@
       "r4": "--"
     },
     "Sergio Garcia": {
-      "position": 17,
+      "position": 16,
       "cut": false,
       "live": false,
       "toPar": "E",
