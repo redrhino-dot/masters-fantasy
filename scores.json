@@ -1,6 +1,6 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "22:23 BST",
+  "lastUpdated": "22:26 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -154,7 +154,7 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 11,
+      "position": 12,
       "cut": false,
       "live": false,
       "toPar": "-3",
