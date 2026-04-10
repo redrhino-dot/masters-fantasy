@@ -13,11 +13,9 @@ TEAM_PLAYERS = [
 ]
 
 ALIASES = {
-    'j.j. spaun':        'JJ Spaun',
     'jj spaun':          'JJ Spaun',
+    'j.j. spaun':        'JJ Spaun',
     'sam stevens':       'Samuel Stevens',
-    'sergio garcia':     'Sergio Garcia',
-    'sergio garc\u00eda': 'Sergio Garcia',
     'bryson dechambeau': 'Bryson DeChambeau',
 }
 
@@ -48,27 +46,31 @@ def resolve(espn_name):
 
 def parse_pos(t):
     t = t.strip().upper()
-    if t in ('CUT','MC','WD','DQ','MDF','DNF','RTD','W/D'):
+    if t in ('CUT','MC','WD','DQ','MDF','DNF','RTD'):
         return None, True
     m = re.match(r'T?(\d+)', t)
     return (int(m.group(1)), False) if m else (None, False)
 
 def parse(html):
-    # Pure regex — no BeautifulSoup needed
-    # Matches: position in "tl TableTD" cell, then player name in leaderboardplayername anchor
-    pattern = re.compile(
-        r'<td class="tl TableTD">([^<]+)</td>'
-        r'[\s\S]{0,600}?'
-        r'leaderboardplayername[^>]+>([^<]+)</a>'
-    )
     scores = {}
-    for m in pattern.finditer(html):
-        pos_text = m.group(1).strip()
-        name_raw = m.group(2).strip()
+
+    # Find each player anchor, then look BACKWARD for their position.
+    # Works with both single and double quoted HTML attributes.
+    name_re = re.compile(r'leaderboardplayername[^>]+>([^<]+)</a>')
+
+    for m in name_re.finditer(html):
+        name_raw = m.group(1).strip()
         our = resolve(name_raw)
-        if our:
-            pos, cut = parse_pos(pos_text)
-            scores[our] = {'position': pos, 'cut': cut, 'live': False}
+        if not our:
+            continue
+
+        # Scan up to 1500 chars before the anchor for a position value
+        before = html[max(0, m.start() - 1500):m.start()]
+        pos_hits = re.findall(r'>[ \t]*(T?\d+|CUT|MC|WD|DQ|MDF|DNF)[ \t]*<', before)
+        pos_text = pos_hits[-1] if pos_hits else None
+        pos, cut = parse_pos(pos_text) if pos_text else (None, False)
+
+        scores[our] = {'position': pos, 'cut': cut, 'live': False}
 
     current_round = 'R1'
     for n in ['4', '3', '2', '1']:
