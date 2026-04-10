@@ -1,6 +1,6 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "00:09 BST",
+  "lastUpdated": "00:16 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -64,10 +64,10 @@
       "r4": "--"
     },
     "Cameron Smith": {
-      "position": 64,
+      "position": null,
       "cut": false,
       "live": false,
-      "toPar": "+7",
+      "toPar": "CUT",
       "r1": "74",
       "r2": "77",
       "r3": "--",
@@ -94,10 +94,10 @@
       "r4": "--"
     },
     "JJ Spaun": {
-      "position": 55,
+      "position": null,
       "cut": false,
       "live": false,
-      "toPar": "+5",
+      "toPar": "CUT",
       "r1": "74",
       "r2": "75",
       "r3": "--",
@@ -144,10 +144,10 @@
       "r4": "--"
     },
     "Bryson DeChambeau": {
-      "position": 60,
+      "position": null,
       "cut": false,
       "live": false,
-      "toPar": "+6",
+      "toPar": "CUT",
       "r1": "76",
       "r2": "74",
       "r3": "--",
