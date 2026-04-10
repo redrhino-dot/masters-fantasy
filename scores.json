@@ -1,6 +1,6 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "21:45 BST",
+  "lastUpdated": "21:48 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -24,7 +24,7 @@
       "r4": "--"
     },
     "Harris English": {
-      "position": 22,
+      "position": 21,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -84,7 +84,7 @@
       "r4": "--"
     },
     "Matt Fitzpatrick": {
-      "position": 22,
+      "position": 21,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -114,7 +114,7 @@
       "r4": "--"
     },
     "Cameron Young": {
-      "position": 22,
+      "position": 21,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -154,7 +154,7 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 10,
+      "position": 11,
       "cut": false,
       "live": false,
       "toPar": "-3",
