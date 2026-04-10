@@ -1,10 +1,10 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "18:57 BST",
+  "lastUpdated": "20:07 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 11,
+      "position": 12,
       "cut": false,
       "live": false,
       "toPar": "-2",
@@ -24,7 +24,7 @@
       "r4": "--"
     },
     "Harris English": {
-      "position": 18,
+      "position": 20,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -34,7 +34,7 @@
       "r4": "--"
     },
     "Charl Schwartzel": {
-      "position": 50,
+      "position": 49,
       "cut": false,
       "live": false,
       "toPar": "+4",
@@ -44,37 +44,77 @@
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 54,
+      "position": 49,
       "cut": false,
       "live": false,
-      "toPar": "+5",
+      "toPar": "+4",
       "r1": "78",
-      "r2": "--",
+      "r2": "70",
       "r3": "--",
       "r4": "--"
     },
     "Tyrrell Hatton": {
-      "position": 2,
+      "position": 4,
       "cut": false,
       "live": false,
       "toPar": "-4",
       "r1": "74",
-      "r2": "--",
+      "r2": "66",
       "r3": "--",
       "r4": "--"
     },
     "Cameron Smith": {
-      "position": 54,
+      "position": 49,
       "cut": false,
       "live": false,
-      "toPar": "+5",
+      "toPar": "+4",
       "r1": "74",
       "r2": "--",
       "r3": "--",
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 18,
+      "position": 30,
+      "cut": false,
+      "live": false,
+      "toPar": "+1",
+      "r1": "73",
+      "r2": "--",
+      "r3": "--",
+      "r4": "--"
+    },
+    "Matt Fitzpatrick": {
+      "position": 44,
+      "cut": false,
+      "live": false,
+      "toPar": "+3",
+      "r1": "74",
+      "r2": "--",
+      "r3": "--",
+      "r4": "--"
+    },
+    "JJ Spaun": {
+      "position": 56,
+      "cut": false,
+      "live": false,
+      "toPar": "+5",
+      "r1": "74",
+      "r2": "75",
+      "r3": "--",
+      "r4": "--"
+    },
+    "Aaron Rai": {
+      "position": 30,
+      "cut": false,
+      "live": false,
+      "toPar": "+1",
+      "r1": "71",
+      "r2": "74",
+      "r3": "--",
+      "r4": "--"
+    },
+    "Cameron Young": {
+      "position": 20,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -83,48 +123,8 @@
       "r3": "--",
       "r4": "--"
     },
-    "Matt Fitzpatrick": {
-      "position": 40,
-      "cut": false,
-      "live": false,
-      "toPar": "+2",
-      "r1": "74",
-      "r2": "--",
-      "r3": "--",
-      "r4": "--"
-    },
-    "JJ Spaun": {
-      "position": 62,
-      "cut": false,
-      "live": false,
-      "toPar": "+6",
-      "r1": "74",
-      "r2": "--",
-      "r3": "--",
-      "r4": "--"
-    },
-    "Aaron Rai": {
-      "position": 26,
-      "cut": false,
-      "live": false,
-      "toPar": "+1",
-      "r1": "71",
-      "r2": "--",
-      "r3": "--",
-      "r4": "--"
-    },
-    "Cameron Young": {
-      "position": 26,
-      "cut": false,
-      "live": false,
-      "toPar": "+1",
-      "r1": "73",
-      "r2": "--",
-      "r3": "--",
-      "r4": "--"
-    },
     "Marco Penge": {
-      "position": 40,
+      "position": 37,
       "cut": false,
       "live": false,
       "toPar": "+2",
@@ -134,7 +134,7 @@
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 40,
+      "position": 37,
       "cut": false,
       "live": false,
       "toPar": "+2",
@@ -144,7 +144,7 @@
       "r4": "--"
     },
     "Bryson DeChambeau": {
-      "position": 54,
+      "position": 56,
       "cut": false,
       "live": false,
       "toPar": "+5",
@@ -154,22 +154,22 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 11,
+      "position": 7,
       "cut": false,
       "live": false,
-      "toPar": "-2",
+      "toPar": "-3",
       "r1": "72",
-      "r2": "--",
+      "r2": "69",
       "r3": "--",
       "r4": "--"
     },
     "Sergio Garcia": {
-      "position": 46,
+      "position": 44,
       "cut": false,
       "live": false,
       "toPar": "+3",
       "r1": "72",
-      "r2": "--",
+      "r2": "75",
       "r3": "--",
       "r4": "--"
     }
