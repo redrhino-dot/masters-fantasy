@@ -12,7 +12,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased}
 body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.6;min-height:100dvh}
-.hdr{background:var(--green-deep);border-bottom:1px solid var(--border-gold);padding:13px 20px 11px;text-align:center;position:sticky;top:0;z-index:100}
+.hdr{background:var(--green-deep);border-bottom:1px solid var(--border-gold);padding:13px 20px 11px;text-align:center;position:sticky;top:0;z-index:100;position:relative}
 .hdr-inner{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:3px}
 .hdr h1{font-family:'Libre Baskerville',Georgia,serif;font-size:1.2rem;font-weight:400;color:var(--gold);letter-spacing:.03em}
 .hdr-meta{display:flex;align-items:center;justify-content:center;gap:10px}
@@ -76,6 +76,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
     <span class="hdr-sub" id="hdrRound">Round 1</span>
     <span class="live-dot stale" id="liveDot">Loading…</span>
   </div>
+  <button id="refreshBtn" onclick="manualRefresh()" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:1px solid rgba(201,168,76,.3);border-radius:50%;width:34px;height:34px;cursor:pointer;color:var(--gold);font-size:1.1rem;line-height:1;display:flex;align-items:center;justify-content:center;transition:opacity .2s">↻</button>
 </header>
 
 <nav class="tabs" id="tabBar">
@@ -268,7 +269,16 @@ document.getElementById('tabBar').addEventListener('click',e=>{
   document.getElementById('panel-'+btn.dataset.panel).classList.add('on');
   btn.classList.add('on');
 });
-
+async function manualRefresh(){
+  const btn=document.getElementById('refreshBtn');
+  btn.style.opacity='.3';
+  btn.disabled=true;
+  btn.textContent='⟳';
+  await loadScores();
+  btn.style.opacity='1';
+  btn.disabled=false;
+  btn.textContent='↻';
+}
 loadScores();
 setInterval(loadScores,5*60*1000);
 </script>
