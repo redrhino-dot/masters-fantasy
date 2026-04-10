@@ -43,6 +43,9 @@ HEADERS = {
     'Referer': 'https://www.espn.com/golf/',
 }
 
+def strip_tags(s):
+    return re.sub(r'<[^>]+>', '', s).strip()
+
 def parse_pos(t):
     t = t.strip().upper()
     if t in ('CUT','MC','WD','DQ','MDF','DNF','RTD'):
@@ -50,18 +53,20 @@ def parse_pos(t):
     m = re.match(r'T?(\d+)', t)
     return (int(m.group(1)), False) if m else (None, False)
 
-def extract_cells(html, from_idx):
-    row_end = html.find('</tr>', from_idx)
-    segment = html[from_idx: row_end if row_end != -1 else from_idx + 3000]
-    return re.findall(r'<td[^>]*>([^<]+)</td>', segment)
+def get_row(html, idx):
+    """Return all td text values from the <tr> that contains position idx."""
+    tr_start = html.rfind('<tr', 0, idx)
+    tr_end   = html.find('</tr>', idx)
+    if tr_start == -1:
+        return []
+    row = html[tr_start : tr_end + 5 if tr_end != -1 else idx + 4000]
+    tds = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL)
+    return [strip_tags(td) for td in tds]
 
 def detect_round(html):
-    # Look for the status message e.g. "Round 2 - In Progress" or "Round 1 - Play Complete"
-    # These are specific status strings, unlike column headers which are just "Round 1" etc.
-    m = re.search(r'Round (\d)\s*-\s*(?:Play|In Progress|Suspended|Complete|Tee)', html)
+    m = re.search(r'Round (\d)\s*[-–]\s*(?:Play|In Progress|Suspended|Complete|Tee)', html)
     if m:
         return f'R{m.group(1)}'
-    # Fallback: any "Round X -" pattern
     m = re.search(r'Round (\d) -', html)
     if m:
         return f'R{m.group(1)}'
@@ -69,20 +74,32 @@ def detect_round(html):
 
 def parse(html):
     scores = {}
+
     for slug, our_name in SLUG_MAP.items():
         if our_name in scores:
             continue
         idx = html.find(f'/{slug}')
         if idx == -1:
             continue
-        before = html[max(0, idx - 1500):idx]
-        pos_hits = re.findall(r'>[ \t]*(T?\d+|CUT|MC|WD|DQ|MDF|DNF)[ \t]*<', before)
-        pos_text = pos_hits[-1] if pos_hits else None
+
+        # Get all <td> values for this player's row
+        tds = get_row(html, idx)
+        if not tds:
+            continue
+
+        # First non-empty td is ALWAYS the overall tournament position
+        pos_text = next((t for t in tds if t and t != ' '), None)
         pos, cut = parse_pos(pos_text) if pos_text else (None, False)
 
+        # Cells after the anchor: toPar, today, thru, R1, R2, R3, R4
         anchor_end = html.find('</a>', idx)
-        cells = extract_cells(html, anchor_end if anchor_end != -1 else idx)
-        def cell(i): return cells[i].strip() if i < len(cells) else '--'
+        after = html[anchor_end if anchor_end != -1 else idx : ]
+        row_end = after.find('</tr>')
+        after_segment = after[:row_end] if row_end != -1 else after[:3000]
+        after_tds = [strip_tags(td) for td in re.findall(r'<td[^>]*>(.*?)</td>', after_segment, re.DOTALL)]
+
+        def cell(i): return after_tds[i] if i < len(after_tds) else '--'
+
         to_par = cell(0)
         r1 = cell(3); r2 = cell(4); r3 = cell(5); r4 = cell(6)
 
@@ -90,7 +107,7 @@ def parse(html):
             'position': pos, 'cut': cut, 'live': False,
             'toPar': to_par, 'r1': r1, 'r2': r2, 'r3': r3, 'r4': r4,
         }
-        print(f"  {our_name:<22} pos={str(pos_text):<5} toPar={to_par:<5} R1={r1} R2={r2} R3={r3} R4={r4}")
+        print(f"  {our_name:<22} pos={str(pos_text):<6} toPar={to_par:<5} R1={r1} R2={r2} R3={r3} R4={r4}")
 
     return scores, detect_round(html)
 
@@ -120,9 +137,9 @@ if __name__ == '__main__':
 
         result = {
             'currentRound': rnd,
-            'lastUpdated': datetime.now(BST).strftime('%H:%M BST'),
-            'source': 'ESPN HTML',
-            'players': scores,
+            'lastUpdated':  datetime.now(BST).strftime('%H:%M BST'),
+            'source':       'ESPN HTML',
+            'players':      scores,
         }
         with open('scores.json', 'w') as f:
             json.dump(result, f, indent=2)
