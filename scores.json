@@ -1,10 +1,10 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "22:26 BST",
+  "lastUpdated": "22:44 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 17,
+      "position": 20,
       "cut": false,
       "live": false,
       "toPar": "-1",
@@ -24,7 +24,7 @@
       "r4": "--"
     },
     "Harris English": {
-      "position": 24,
+      "position": 23,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -69,22 +69,22 @@
       "live": false,
       "toPar": "+7",
       "r1": "74",
-      "r2": "--",
+      "r2": "77",
       "r3": "--",
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 29,
+      "position": 23,
       "cut": false,
       "live": false,
-      "toPar": "+1",
+      "toPar": "E",
       "r1": "73",
       "r2": "--",
       "r3": "--",
       "r4": "--"
     },
     "Matt Fitzpatrick": {
-      "position": 24,
+      "position": 23,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -94,7 +94,7 @@
       "r4": "--"
     },
     "JJ Spaun": {
-      "position": 56,
+      "position": 55,
       "cut": false,
       "live": false,
       "toPar": "+5",
@@ -104,7 +104,7 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 29,
+      "position": 31,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -114,17 +114,17 @@
       "r4": "--"
     },
     "Cameron Young": {
-      "position": 17,
+      "position": 15,
       "cut": false,
       "live": false,
-      "toPar": "-1",
+      "toPar": "-2",
       "r1": "73",
       "r2": "--",
       "r3": "--",
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 29,
+      "position": 31,
       "cut": false,
       "live": false,
       "toPar": "+1",
