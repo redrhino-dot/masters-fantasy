@@ -1,15 +1,15 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "23:23 BST",
+  "lastUpdated": "00:01 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 17,
+      "position": 16,
       "cut": false,
       "live": false,
       "toPar": "-2",
       "r1": "70",
-      "r2": "--",
+      "r2": "72",
       "r3": "--",
       "r4": "--"
     },
@@ -24,7 +24,7 @@
       "r4": "--"
     },
     "Harris English": {
-      "position": 25,
+      "position": 24,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -34,7 +34,7 @@
       "r4": "--"
     },
     "Charl Schwartzel": {
-      "position": 48,
+      "position": 47,
       "cut": false,
       "live": false,
       "toPar": "+4",
@@ -44,7 +44,7 @@
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 48,
+      "position": 47,
       "cut": false,
       "live": false,
       "toPar": "+4",
@@ -74,7 +74,7 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 25,
+      "position": 24,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -84,17 +84,17 @@
       "r4": "--"
     },
     "Matt Fitzpatrick": {
-      "position": 21,
+      "position": 20,
       "cut": false,
       "live": false,
       "toPar": "-1",
       "r1": "74",
-      "r2": "--",
+      "r2": "69",
       "r3": "--",
       "r4": "--"
     },
     "JJ Spaun": {
-      "position": 56,
+      "position": 55,
       "cut": false,
       "live": false,
       "toPar": "+5",
@@ -104,7 +104,7 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 31,
+      "position": 32,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -119,12 +119,12 @@
       "live": false,
       "toPar": "-4",
       "r1": "73",
-      "r2": "--",
+      "r2": "67",
       "r3": "--",
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 31,
+      "position": 32,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -144,12 +144,12 @@
       "r4": "--"
     },
     "Bryson DeChambeau": {
-      "position": 45,
+      "position": 60,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+6",
       "r1": "76",
-      "r2": "--",
+      "r2": "74",
       "r3": "--",
       "r4": "--"
     },
