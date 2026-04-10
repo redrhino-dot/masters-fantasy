@@ -4,6 +4,35 @@ from datetime import datetime
 
 ESPN_URL = "https://www.espn.com/golf/leaderboard/_/tournamentId/401811941"
 
+TEAM_PLAYERS = [
+    'Xander Schauffele', 'Tommy Fleetwood', 'Harris English', 'Charl Schwartzel',
+    'Jon Rahm', 'Tyrrell Hatton', 'Cameron Smith', 'Dustin Johnson',
+    'Matt Fitzpatrick', 'JJ Spaun', 'Aaron Rai',
+    'Cameron Young', 'Marco Penge', 'Samuel Stevens',
+    'Bryson DeChambeau', 'Chris Gotterup', 'Sergio Garcia'
+]
+
+SLUG_MAP = {
+    'xander-schauffele':  'Xander Schauffele',
+    'tommy-fleetwood':    'Tommy Fleetwood',
+    'harris-english':     'Harris English',
+    'charl-schwartzel':   'Charl Schwartzel',
+    'jon-rahm':           'Jon Rahm',
+    'tyrrell-hatton':     'Tyrrell Hatton',
+    'cameron-smith':      'Cameron Smith',
+    'dustin-johnson':     'Dustin Johnson',
+    'matt-fitzpatrick':   'Matt Fitzpatrick',
+    'jj-spaun':           'JJ Spaun',
+    'aaron-rai':          'Aaron Rai',
+    'cameron-young':      'Cameron Young',
+    'marco-penge':        'Marco Penge',
+    'sam-stevens':        'Samuel Stevens',
+    'samuel-stevens':     'Samuel Stevens',
+    'bryson-dechambeau':  'Bryson DeChambeau',
+    'chris-gotterup':     'Chris Gotterup',
+    'sergio-garcia':      'Sergio Garcia',
+}
+
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
                   '(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
@@ -13,47 +42,74 @@ HEADERS = {
     'Referer': 'https://www.espn.com/golf/',
 }
 
-SLUGS = [
-    'xander-schauffele','tommy-fleetwood','harris-english','charl-schwartzel',
-    'jon-rahm','tyrrell-hatton','cameron-smith','dustin-johnson',
-    'matt-fitzpatrick','jj-spaun','aaron-rai','cameron-young',
-    'marco-penge','sam-stevens','bryson-dechambeau','chris-gotterup','sergio-garcia'
-]
+def parse_pos(t):
+    t = t.strip().upper()
+    if t in ('CUT','MC','WD','DQ','MDF','DNF','RTD'):
+        return None, True
+    m = re.match(r'T?(\d+)', t)
+    return (int(m.group(1)), False) if m else (None, False)
+
+def parse(html):
+    scores = {}
+
+    # *** KEY FIX: GitHub Actions gets golf/player/_/ not golf/player/id/ ***
+    url_re = re.compile(r'golf/player/_/\d+/([^"\'>\s&]+)')
+
+    for m in url_re.finditer(html):
+        slug = m.group(1).rstrip('/')
+        our = SLUG_MAP.get(slug)
+        if not our or our in scores:
+            continue
+        # Look backward up to 1500 chars for a position value
+        before = html[max(0, m.start() - 1500):m.start()]
+        pos_hits = re.findall(r'>[ \t]*(T?\d+|CUT|MC|WD|DQ|MDF|DNF)[ \t]*<', before)
+        pos_text = pos_hits[-1] if pos_hits else None
+        pos, cut = parse_pos(pos_text) if pos_text else (None, False)
+        scores[our] = {'position': pos, 'cut': cut, 'live': False}
+        print(f"  {our:<22} pos={pos_text}")
+
+    current_round = 'R1'
+    for n in ['4', '3', '2', '1']:
+        if f'Round {n}' in html:
+            current_round = f'R{n}'
+            break
+
+    return scores, current_round
 
 if __name__ == '__main__':
-    print(f"[{datetime.utcnow().strftime('%H:%M UTC')}] Fetching...")
-    resp = requests.get(ESPN_URL, headers=HEADERS, timeout=25)
-    print(f"  HTTP {resp.status_code} | {len(resp.text):,} bytes")
+    try:
+        print(f"[{datetime.utcnow().strftime('%H:%M UTC')}] Fetching ESPN leaderboard...")
+        resp = requests.get(ESPN_URL, headers=HEADERS, timeout=25)
+        resp.raise_for_status()
+        html = resp.text
+        print(f"  {len(html):,} bytes | HTTP {resp.status_code}")
 
-    html = resp.text
+        with open('debug_espn.html', 'w', encoding='utf-8') as f:
+            f.write(html)
 
-    with open('debug_espn.html', 'w', encoding='utf-8') as f:
-        f.write(html)
+        scores, rnd = parse(html)
+        matched = len(scores)
+        missing = [p for p in TEAM_PLAYERS if p not in scores]
 
-    # Print first 300 chars so we can see what we actually got
-    print(f"\n--- HTML START ---")
-    print(repr(html[:300]))
-    print(f"--- HTML END ---\n")
+        print(f"  Matched {matched}/{len(TEAM_PLAYERS)}")
+        if missing:
+            print(f"  Missing: {missing}")
 
-    # Check what player slugs are actually present
-    print("Slug search results:")
-    found_any = False
-    for slug in SLUGS:
-        if slug in html:
-            print(f"  FOUND: {slug}")
-            found_any = True
-        else:
-            print(f"  MISSING: {slug}")
+        if matched == 0:
+            print("  No players matched.")
+            sys.exit(1)
 
-    # Check for key HTML markers
-    print(f"\nKey markers:")
-    for marker in ['leaderboardplayername', 'golf/player/id', 'golf/player/_', 'TableTD', 'PlayerRow', 'Schauffele']:
-        count = html.count(marker)
-        print(f"  '{marker}' appears {count} times")
+        result = {
+            'currentRound': rnd,
+            'lastUpdated': datetime.utcnow().strftime('%H:%M UTC'),
+            'source': 'ESPN HTML',
+            'players': scores,
+        }
+        with open('scores.json', 'w') as f:
+            json.dump(result, f, indent=2)
+        print(f"✓ scores.json updated — {rnd} — {matched} players")
 
-    if not found_any:
-        print("\nNo slugs found at all — ESPN may be blocking or returning a different page")
+    except Exception as e:
+        print(f"✗ Fatal: {e}")
+        import traceback; traceback.print_exc()
         sys.exit(1)
-
-    print("\nDiagnostic complete — check log above")
-    sys.exit(1)  # exit 1 so we can see the output in Actions
