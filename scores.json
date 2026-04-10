@@ -1,20 +1,20 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "20:58 BST",
+  "lastUpdated": "21:45 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 10,
+      "position": 15,
       "cut": false,
       "live": false,
-      "toPar": "-3",
+      "toPar": "-2",
       "r1": "70",
       "r2": "--",
       "r3": "--",
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 4,
+      "position": 5,
       "cut": false,
       "live": false,
       "toPar": "-4",
@@ -34,17 +34,17 @@
       "r4": "--"
     },
     "Charl Schwartzel": {
-      "position": 44,
+      "position": 50,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+4",
       "r1": "75",
-      "r2": "--",
+      "r2": "73",
       "r3": "--",
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 48,
+      "position": 50,
       "cut": false,
       "live": false,
       "toPar": "+4",
@@ -54,7 +54,7 @@
       "r4": "--"
     },
     "Tyrrell Hatton": {
-      "position": 4,
+      "position": 5,
       "cut": false,
       "live": false,
       "toPar": "-4",
@@ -74,7 +74,7 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 17,
+      "position": 18,
       "cut": false,
       "live": false,
       "toPar": "-1",
@@ -84,10 +84,10 @@
       "r4": "--"
     },
     "Matt Fitzpatrick": {
-      "position": 30,
+      "position": 22,
       "cut": false,
       "live": false,
-      "toPar": "+1",
+      "toPar": "E",
       "r1": "74",
       "r2": "--",
       "r3": "--",
@@ -104,7 +104,7 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 30,
+      "position": 29,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -114,17 +114,17 @@
       "r4": "--"
     },
     "Cameron Young": {
-      "position": 17,
+      "position": 22,
       "cut": false,
       "live": false,
-      "toPar": "-1",
+      "toPar": "E",
       "r1": "73",
       "r2": "--",
       "r3": "--",
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 30,
+      "position": 29,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -134,7 +134,7 @@
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 39,
+      "position": 38,
       "cut": false,
       "live": false,
       "toPar": "+2",
@@ -144,7 +144,7 @@
       "r4": "--"
     },
     "Bryson DeChambeau": {
-      "position": 44,
+      "position": 43,
       "cut": false,
       "live": false,
       "toPar": "+3",
@@ -164,7 +164,7 @@
       "r4": "--"
     },
     "Sergio Garcia": {
-      "position": 44,
+      "position": 43,
       "cut": false,
       "live": false,
       "toPar": "+3",
