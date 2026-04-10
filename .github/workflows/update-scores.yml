@@ -2,9 +2,8 @@ name: Update Masters Scores
 
 on:
   schedule:
-    # Every 15 mins, Thu–Sun 9–12 April, 11:00–23:45 UTC (covers full playing day)
     - cron: '0,15,30,45 11-23 9-12 4 *'
-  workflow_dispatch: # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,19 +12,25 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests beautifulsoup4
 
       - name: Fetch live scores from ESPN
         run: python fetch_scores.py
+
+      - name: Upload debug HTML (inspect if parsing fails)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: debug-espn-html
+          path: debug_espn.html
+          retention-days: 1
 
       - name: Commit scores.json if changed
         run: |
@@ -33,6 +38,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add scores.json
           git diff --staged --quiet || (
-            git commit -m "🏌️ Live scores — $(date -u '+%H:%M UTC %d %b')" &&
+            git commit -m "Live scores — $(date -u '+%H:%M UTC %d %b')" &&
             git push
           )
