@@ -51,22 +51,20 @@ def parse_pos(t):
 
 def parse(html):
     scores = {}
-
-    # *** KEY FIX: GitHub Actions gets golf/player/_/ not golf/player/id/ ***
-    url_re = re.compile(r'golf/player/_/\d+/([^"\'>\s&]+)')
-
-    for m in url_re.finditer(html):
-        slug = m.group(1).rstrip('/')
-        our = SLUG_MAP.get(slug)
-        if not our or our in scores:
+    for slug, our_name in SLUG_MAP.items():
+        if our_name in scores:
+            continue
+        # Direct string search — works regardless of URL format
+        idx = html.find(f'/{slug}')
+        if idx == -1:
             continue
         # Look backward up to 1500 chars for a position value
-        before = html[max(0, m.start() - 1500):m.start()]
+        before = html[max(0, idx - 1500):idx]
         pos_hits = re.findall(r'>[ \t]*(T?\d+|CUT|MC|WD|DQ|MDF|DNF)[ \t]*<', before)
         pos_text = pos_hits[-1] if pos_hits else None
         pos, cut = parse_pos(pos_text) if pos_text else (None, False)
-        scores[our] = {'position': pos, 'cut': cut, 'live': False}
-        print(f"  {our:<22} pos={pos_text}")
+        scores[our_name] = {'position': pos, 'cut': cut, 'live': False}
+        print(f"  {our_name:<22} slug={slug:<25} pos={pos_text}")
 
     current_round = 'R1'
     for n in ['4', '3', '2', '1']:
