@@ -1,13 +1,13 @@
 {
   "currentRound": "R2",
-  "lastUpdated": "22:44 BST",
+  "lastUpdated": "22:50 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 20,
+      "position": 16,
       "cut": false,
       "live": false,
-      "toPar": "-1",
+      "toPar": "-2",
       "r1": "70",
       "r2": "--",
       "r3": "--",
@@ -34,7 +34,7 @@
       "r4": "--"
     },
     "Charl Schwartzel": {
-      "position": 47,
+      "position": 48,
       "cut": false,
       "live": false,
       "toPar": "+4",
@@ -44,7 +44,7 @@
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 47,
+      "position": 48,
       "cut": false,
       "live": false,
       "toPar": "+4",
@@ -94,7 +94,7 @@
       "r4": "--"
     },
     "JJ Spaun": {
-      "position": 55,
+      "position": 57,
       "cut": false,
       "live": false,
       "toPar": "+5",
@@ -114,10 +114,10 @@
       "r4": "--"
     },
     "Cameron Young": {
-      "position": 15,
+      "position": 12,
       "cut": false,
       "live": false,
-      "toPar": "-2",
+      "toPar": "-3",
       "r1": "73",
       "r2": "--",
       "r3": "--",
@@ -144,10 +144,10 @@
       "r4": "--"
     },
     "Bryson DeChambeau": {
-      "position": 47,
+      "position": 45,
       "cut": false,
       "live": false,
-      "toPar": "+4",
+      "toPar": "+3",
       "r1": "76",
       "r2": "--",
       "r3": "--",
