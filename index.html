@@ -31,23 +31,35 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 .info-bar span{font-size:.77rem;color:var(--text-muted)}.info-bar strong{color:var(--text)}
 .stitle{font-size:.67rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin:16px 0 8px}
 .ltable{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:18px}
-.lrow{display:grid;grid-template-columns:44px 1fr auto;align-items:center;padding:13px 15px;border-bottom:1px solid var(--border);gap:10px}
+.lrow{display:grid;grid-template-columns:44px 1fr auto auto;align-items:center;padding:13px 15px;border-bottom:1px solid var(--border);gap:10px}
 .lrow:last-child{border-bottom:none}.lrow.winner{background:linear-gradient(90deg,rgba(201,168,76,.07) 0%,transparent 60%)}
 .rank{text-align:center;font-size:1.05rem;line-height:1}
-.tname{font-weight:600;font-size:.92rem}.tscore{font-size:1.2rem;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.tname{font-weight:600;font-size:.92rem}
+.ltopar{font-size:.88rem;font-weight:600;font-variant-numeric:tabular-nums;text-align:right;color:var(--text-muted)}
+.tscore{font-size:1.2rem;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
 .tcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);margin-bottom:9px;overflow:hidden}
 .tcard-hdr{background:var(--surface-2);padding:10px 15px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
-.tcard-name{font-weight:600;font-size:.92rem}.tcard-total{font-size:1.1rem;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
-.prow{display:grid;grid-template-columns:1fr auto auto;align-items:center;padding:9px 15px;gap:10px;border-bottom:1px solid rgba(255,255,255,.04)}
-.prow:last-child{border-bottom:none}.pname{font-size:.86rem}
+.tcard-name{font-weight:600;font-size:.92rem}
+.tcard-right{display:flex;align-items:center;gap:12px}
+.tcard-topar{font-size:1rem;font-weight:700;font-variant-numeric:tabular-nums}
+.tcard-total{font-size:.78rem;color:var(--text-faint);font-variant-numeric:tabular-nums}
+.prow{display:grid;grid-template-columns:1fr auto auto;align-items:center;padding:9px 15px;gap:8px;border-bottom:1px solid rgba(255,255,255,.04)}
+.prow:last-child{border-bottom:none}
+.pinfo{min-width:0}
+.pname{font-size:.86rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.prounds{font-size:.68rem;color:var(--text-faint);margin-top:2px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.prounds span.scored{color:var(--text-muted)}
+.ptopar{font-size:.95rem;font-weight:700;min-width:40px;text-align:right;font-variant-numeric:tabular-nums}
+.ptopar.under{color:var(--score-green)}.ptopar.over{color:#e07060}.ptopar.even{color:var(--text)}.ptopar.na{color:var(--text-faint)}
+.ppos{font-size:.82rem;font-weight:600;min-width:32px;text-align:right;color:var(--text-muted);font-variant-numeric:tabular-nums}
+.ppos.top{color:var(--score-green)}.ppos.mid{color:var(--text)}.ppos.bot{color:#e07060}.ppos.cut{color:#e07060;font-size:.72rem}
 .badge{border-radius:100px;font-size:.58rem;padding:2px 7px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;line-height:1.5}
 .bl{background:rgba(201,168,76,.1);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
 .bc{background:rgba(192,57,43,.1);color:#e07060;border:1px solid rgba(192,57,43,.3)}
 .bf{background:rgba(39,174,96,.08);color:#5ab87a;border:1px solid rgba(39,174,96,.22)}
-.ppos{font-size:.98rem;font-weight:700;font-variant-numeric:tabular-nums;min-width:30px;text-align:right}
-.ppos.top{color:var(--score-green)}.ppos.mid{color:var(--text)}.ppos.bot{color:#c0392b}.ppos.na{color:var(--text-faint)}
-.lmembers{font-size:.73rem;color:var(--text-faint);padding:8px 15px 9px;border-bottom:1px solid var(--border)}
-.loading{text-align:center;padding:40px;color:var(--text-faint);font-size:.88rem}
+.rnd-hdr{display:grid;grid-template-columns:1fr auto auto;padding:5px 15px 4px;border-bottom:1px solid var(--border);background:var(--surface-3)}
+.rnd-hdr span{font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint)}
+.rnd-hdr .rh-right{display:flex;gap:40px}
 </style>
 </head>
 <body>
@@ -87,7 +99,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 
   <div id="panel-league1" class="panel">
     <div class="ltable" style="margin-bottom:14px">
-      <div class="lmembers">League 1 · Kris · Graham · Carey</div>
+      <div style="font-size:.73rem;color:var(--text-faint);padding:8px 15px 9px">League 1 · Kris · Graham · Carey</div>
     </div>
     <p class="stitle">League 1 Table</p>
     <div class="ltable" id="tbl-league1"></div>
@@ -97,7 +109,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 
   <div id="panel-league2" class="panel">
     <div class="ltable" style="margin-bottom:14px">
-      <div class="lmembers">League 2 · Kris · Matt · Patrick</div>
+      <div style="font-size:.73rem;color:var(--text-faint);padding:8px 15px 9px">League 2 · Kris · Matt · Patrick</div>
     </div>
     <p class="stitle">League 2 Table</p>
     <div class="ltable" id="tbl-league2"></div>
@@ -120,63 +132,88 @@ const LEAGUES={overall:['Kris','Graham','Carey','Matt','Patrick'],league1:['Kris
 const MEDALS=['🥇','🥈','🥉'];
 const ROUND_LABELS={R1:'Round 1',R2:'Round 2',R3:'Round 3',R4:'Round 4'};
 
-// Fallback state (R1 snapshot 23:13 BST)
 const state={
-  currentRound:'R1',lastUpdated:'—',cutLine:null,isLive:false,
+  currentRound:'R1',lastUpdated:'—',cutLine:null,
   players:{
-    'Xander Schauffele':{R1:7, R2:null,R3:null,R4:null,cut:false,live:false},
-    'Tommy Fleetwood':  {R1:11,R2:null,R3:null,R4:null,cut:false,live:false},
-    'Harris English':   {R1:17,R2:null,R3:null,R4:null,cut:false,live:true},
-    'Charl Schwartzel': {R1:49,R2:null,R3:null,R4:null,cut:false,live:false},
-    'Jon Rahm':         {R1:74,R2:null,R3:null,R4:null,cut:false,live:true},
-    'Tyrrell Hatton':   {R1:34,R2:null,R3:null,R4:null,cut:false,live:true},
-    'Cameron Smith':    {R1:41,R2:null,R3:null,R4:null,cut:false,live:false},
-    'Dustin Johnson':   {R1:34,R2:null,R3:null,R4:null,cut:false,live:false},
-    'Matt Fitzpatrick': {R1:41,R2:null,R3:null,R4:null,cut:false,live:false},
-    'JJ Spaun':         {R1:41,R2:null,R3:null,R4:null,cut:false,live:true},
-    'Aaron Rai':        {R1:11,R2:null,R3:null,R4:null,cut:false,live:false},
-    'Cameron Young':    {R1:34,R2:null,R3:null,R4:null,cut:false,live:false},
-    'Marco Penge':      {R1:65,R2:null,R3:null,R4:null,cut:false,live:true},
-    'Samuel Stevens':   {R1:17,R2:null,R3:null,R4:null,cut:false,live:false},
-    'Bryson DeChambeau':{R1:57,R2:null,R3:null,R4:null,cut:false,live:false},
-    'Chris Gotterup':   {R1:17,R2:null,R3:null,R4:null,cut:false,live:true},
-    'Sergio Garcia':    {R1:17,R2:null,R3:null,R4:null,cut:false,live:false},
+    'Xander Schauffele':{position:6, toPar:'-2',r1:'70',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Tommy Fleetwood':  {position:10,toPar:'-1',r1:'71',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Harris English':   {position:33,toPar:'+1',r1:'73',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Charl Schwartzel': {position:48,toPar:'+3',r1:'75',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Jon Rahm':         {position:73,toPar:'+6',r1:'78',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Tyrrell Hatton':   {position:40,toPar:'+2',r1:'74',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Cameron Smith':    {position:40,toPar:'+2',r1:'74',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Dustin Johnson':   {position:33,toPar:'+1',r1:'73',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Matt Fitzpatrick': {position:40,toPar:'+2',r1:'74',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'JJ Spaun':         {position:40,toPar:'+2',r1:'74',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Aaron Rai':        {position:10,toPar:'-1',r1:'71',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Cameron Young':    {position:33,toPar:'+1',r1:'73',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Marco Penge':      {position:56,toPar:'+4',r1:'76',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Samuel Stevens':   {position:17,toPar:'E', r1:'72',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Bryson DeChambeau':{position:56,toPar:'+4',r1:'76',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Chris Gotterup':   {position:17,toPar:'E', r1:'72',r2:'--',r3:'--',r4:'--',cut:false,live:false},
+    'Sergio Garcia':    {position:17,toPar:'E', r1:'72',r2:'--',r3:'--',r4:'--',cut:false,live:false},
   }
 };
 
-// ── SCORING ──────────────────────────────────────────────────
-function playerScore(name){
-  const d=state.players[name];
-  if(!d)return 999;
-  if(d.cut)return state.cutLine?state.cutLine+1:999;
-  for(const r of['R4','R3','R2','R1']){if(d[r]!==null&&d[r]!==undefined)return d[r];}
-  return 999;
-}
-function teamScore(t){return TEAMS[t].reduce((s,p)=>s+playerScore(p),0);}
-function leagueRanked(key){return LEAGUES[key].map(t=>({name:t,score:teamScore(t)})).sort((a,b)=>a.score-b.score);}
-function posClass(pos){if(!pos||pos===999)return'na';if(pos<=10)return'top';if(pos<=40)return'mid';return'bot';}
+function toParInt(s){if(!s||s==='--')return 0;if(s==='E')return 0;return parseInt(s)||0;}
+function toParClass(s){if(!s||s==='--')return'na';if(s.startsWith('-'))return'under';if(s==='E')return'even';return'over';}
+function posClass(pos,cut){if(cut)return'cut';if(!pos||pos===999)return'na';if(pos<=10)return'top';if(pos<=40)return'mid';return'bot';}
+function fmtToPar(n){if(n===0)return'E';return(n>0?'+':'')+n;}
 
-// ── RENDER ────────────────────────────────────────────────────
+function playerScore(name){const d=state.players[name];if(!d||d.cut)return 999;return d.position||999;}
+function teamScore(t){return TEAMS[t].reduce((s,p)=>s+playerScore(p),0);}
+function teamToPar(t){return TEAMS[t].reduce((s,p)=>{const d=state.players[p];if(!d||d.cut)return s+20;return s+toParInt(d.toPar);},0);}
+function leagueRanked(key){return LEAGUES[key].map(t=>({name:t,score:teamScore(t),topar:teamToPar(t)})).sort((a,b)=>a.score-b.score);}
+
 function renderLeagueTable(id,key){
   document.getElementById(id).innerHTML=leagueRanked(key).map((t,i)=>`
     <div class="lrow ${i===0?'winner':''}">
       <div class="rank">${MEDALS[i]||i+1}</div>
       <div class="tname">${t.name}</div>
+      <div class="ltopar">${fmtToPar(t.topar)}</div>
       <div class="tscore">${t.score}</div>
     </div>`).join('');
 }
+
+function roundsHtml(d){
+  return['r1','r2','r3','r4'].map((r,i)=>{
+    const val=d[r];const hasVal=val&&val!=='--';
+    return`<span class="${hasVal?'scored':''}">${'R'+(i+1)}:${hasVal?val:'--'}</span>`;
+  }).join(' · ');
+}
+
 function renderTeamCards(id,teams){
   document.getElementById(id).innerHTML=teams.map(team=>{
-    const total=teamScore(team);
+    const score=teamScore(team);const tp=teamToPar(team);
+    const tpFmt=fmtToPar(tp);const tpClass=tp<0?'under':tp>0?'over':'even';
     const rows=TEAMS[team].map(p=>{
-      const d=state.players[p];
-      const pos=playerScore(p);
-      const badge=d.cut?'<span class="badge bc">Cut</span>':d.live?'<span class="badge bl">⏳ Live</span>':'<span class="badge bf">F</span>';
-      return`<div class="prow"><div class="pname">${p}</div><div>${badge}</div><div class="ppos ${posClass(pos)}">${pos===999?'—':pos}</div></div>`;
+      const d=state.players[p];if(!d)return'';
+      const badge=d.cut?'<span class="badge bc">Cut</span>':d.live?'<span class="badge bl">Live</span>':'<span class="badge bf">F</span>';
+      const tp2=d.toPar||'--';
+      const posStr=d.cut?'CUT':(d.position?d.position:'--');
+      return`<div class="prow">
+        <div class="pinfo">
+          <div class="pname">${p} ${badge}</div>
+          <div class="prounds">${roundsHtml(d)}</div>
+        </div>
+        <div class="ptopar ${toParClass(tp2)}">${tp2}</div>
+        <div class="ppos ${posClass(d.position,d.cut)}">${posStr}</div>
+      </div>`;
     }).join('');
-    return`<div class="tcard"><div class="tcard-hdr"><div class="tcard-name">${team}</div><div class="tcard-total">${total}</div></div>${rows}</div>`;
+    return`<div class="tcard">
+      <div class="tcard-hdr">
+        <div class="tcard-name">${team}</div>
+        <div class="tcard-right">
+          <span class="tcard-topar ptopar ${tpClass}">${tpFmt}</span>
+          <span class="tcard-total">pos ${score>=3996?'--':score}</span>
+        </div>
+      </div>
+      <div class="rnd-hdr"><span>Player</span><div class="rh-right"><span>Score</span><span>Pos</span></div></div>
+      ${rows}
+    </div>`;
   }).join('');
 }
+
 function renderAll(){
   renderLeagueTable('tbl-overall','overall');
   renderLeagueTable('tbl-league1','league1');
@@ -197,7 +234,6 @@ function setLiveStatus(isLive,msg){
   dot.textContent=isLive?'Live':'Updated '+msg;
 }
 
-// ── LOAD SCORES.JSON ─────────────────────────────────────────
 async function loadScores(){
   try{
     const resp=await fetch('./scores.json?t='+Date.now());
@@ -205,27 +241,26 @@ async function loadScores(){
     const data=await resp.json();
     if(data.currentRound)state.currentRound=data.currentRound;
     if(data.lastUpdated)state.lastUpdated=data.lastUpdated;
-    if(data.cutLine)state.cutLine=data.cutLine;
     if(data.players){
-      const r=data.currentRound||'R1';
       Object.entries(data.players).forEach(([name,info])=>{
         if(!state.players[name])return;
-        if(info.position!==null&&info.position!==undefined)state.players[name][r]=info.position;
-        state.players[name].cut=info.cut||false;
-        state.players[name].live=info.live||false;
+        const p=state.players[name];
+        if(info.position!==null&&info.position!==undefined)p.position=info.position;
+        if(info.toPar)p.toPar=info.toPar;
+        ['r1','r2','r3','r4'].forEach(r=>{
+          if(info[r]&&info[r]!=='--'&&info[r]!==null)p[r]=info[r];
+        });
+        p.cut=info.cut||false;
+        p.live=info.live||false;
       });
     }
-    renderAll();
-    setLiveStatus(true,data.lastUpdated);
+    renderAll();setLiveStatus(true,data.lastUpdated);
   }catch(e){
-    console.warn('scores.json unavailable, using fallback:',e.message);
-    state.lastUpdated='R1 snapshot (23:13 BST)';
-    renderAll();
-    setLiveStatus(false,'R1 snapshot');
+    console.warn('scores.json unavailable:',e.message);
+    renderAll();setLiveStatus(false,'R1 snapshot');
   }
 }
 
-// ── TABS ──────────────────────────────────────────────────────
 document.getElementById('tabBar').addEventListener('click',e=>{
   const btn=e.target.closest('.tab');if(!btn)return;
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
@@ -234,9 +269,8 @@ document.getElementById('tabBar').addEventListener('click',e=>{
   btn.classList.add('on');
 });
 
-// ── INIT + AUTO-REFRESH ───────────────────────────────────────
 loadScores();
-setInterval(loadScores, 5 * 60 * 1000); // refresh every 5 min
+setInterval(loadScores,5*60*1000);
 </script>
 </body>
 </html>
