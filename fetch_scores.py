@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 import requests, json, re, sys
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 ESPN_URL = "https://www.espn.com/golf/leaderboard/_/tournamentId/401811941"
+BST = timezone(timedelta(hours=1))
 
 TEAM_PLAYERS = [
     'Xander Schauffele', 'Tommy Fleetwood', 'Harris English', 'Charl Schwartzel',
@@ -50,63 +51,53 @@ def parse_pos(t):
     return (int(m.group(1)), False) if m else (None, False)
 
 def extract_cells(html, from_idx):
-    """Extract plain-text <td> values after a position in the HTML."""
     row_end = html.find('</tr>', from_idx)
     segment = html[from_idx: row_end if row_end != -1 else from_idx + 3000]
     return re.findall(r'<td[^>]*>([^<]+)</td>', segment)
 
+def detect_round(html):
+    # Look for the status message e.g. "Round 2 - In Progress" or "Round 1 - Play Complete"
+    # These are specific status strings, unlike column headers which are just "Round 1" etc.
+    m = re.search(r'Round (\d)\s*-\s*(?:Play|In Progress|Suspended|Complete|Tee)', html)
+    if m:
+        return f'R{m.group(1)}'
+    # Fallback: any "Round X -" pattern
+    m = re.search(r'Round (\d) -', html)
+    if m:
+        return f'R{m.group(1)}'
+    return 'R1'
+
 def parse(html):
     scores = {}
-
     for slug, our_name in SLUG_MAP.items():
         if our_name in scores:
             continue
         idx = html.find(f'/{slug}')
         if idx == -1:
             continue
-
-        # --- Position: look backward ---
         before = html[max(0, idx - 1500):idx]
         pos_hits = re.findall(r'>[ \t]*(T?\d+|CUT|MC|WD|DQ|MDF|DNF)[ \t]*<', before)
         pos_text = pos_hits[-1] if pos_hits else None
         pos, cut = parse_pos(pos_text) if pos_text else (None, False)
 
-        # --- Scores: look forward after closing </a> ---
         anchor_end = html.find('</a>', idx)
         cells = extract_cells(html, anchor_end if anchor_end != -1 else idx)
-
-        # Cells after player name: toPar, today, thru/time, R1, R2, R3, R4, TOT
         def cell(i): return cells[i].strip() if i < len(cells) else '--'
-
         to_par = cell(0)
-        r1     = cell(3)
-        r2     = cell(4)
-        r3     = cell(5)
-        r4     = cell(6)
+        r1 = cell(3); r2 = cell(4); r3 = cell(5); r4 = cell(6)
 
         scores[our_name] = {
-            'position': pos,
-            'cut':      cut,
-            'live':     False,
-            'toPar':    to_par,
-            'r1':       r1,
-            'r2':       r2,
-            'r3':       r3,
-            'r4':       r4,
+            'position': pos, 'cut': cut, 'live': False,
+            'toPar': to_par, 'r1': r1, 'r2': r2, 'r3': r3, 'r4': r4,
         }
         print(f"  {our_name:<22} pos={str(pos_text):<5} toPar={to_par:<5} R1={r1} R2={r2} R3={r3} R4={r4}")
 
-    current_round = 'R1'
-    for n in ['4', '3', '2', '1']:
-        if f'Round {n}' in html:
-            current_round = f'R{n}'
-            break
-
-    return scores, current_round
+    return scores, detect_round(html)
 
 if __name__ == '__main__':
     try:
-        print(f"[{datetime.utcnow().strftime('%H:%M UTC')}] Fetching ESPN leaderboard...")
+        now_bst = datetime.now(BST).strftime('%H:%M BST')
+        print(f"[{now_bst}] Fetching ESPN leaderboard...")
         resp = requests.get(ESPN_URL, headers=HEADERS, timeout=25)
         resp.raise_for_status()
         html = resp.text
@@ -118,7 +109,7 @@ if __name__ == '__main__':
         scores, rnd = parse(html)
         matched = len(scores)
         missing = [p for p in TEAM_PLAYERS if p not in scores]
-
+        print(f"  Round detected: {rnd}")
         print(f"  Matched {matched}/{len(TEAM_PLAYERS)}")
         if missing:
             print(f"  Missing: {missing}")
@@ -129,9 +120,9 @@ if __name__ == '__main__':
 
         result = {
             'currentRound': rnd,
-            'lastUpdated':  datetime.utcnow().strftime('%H:%M UTC'),
-            'source':       'ESPN HTML',
-            'players':      scores,
+            'lastUpdated': datetime.now(BST).strftime('%H:%M BST'),
+            'source': 'ESPN HTML',
+            'players': scores,
         }
         with open('scores.json', 'w') as f:
             json.dump(result, f, indent=2)
