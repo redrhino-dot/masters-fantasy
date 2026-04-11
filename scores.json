@@ -1,6 +1,6 @@
 {
   "currentRound": "R3",
-  "lastUpdated": "15:23 BST",
+  "lastUpdated": "16:00 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -37,14 +37,14 @@
       "position": 53,
       "cut": false,
       "live": false,
-      "toPar": "+5",
+      "toPar": "+6",
       "r1": "75",
       "r2": "73",
       "r3": "--",
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 45,
+      "position": 44,
       "cut": false,
       "live": false,
       "toPar": "+3",
@@ -164,7 +164,7 @@
       "r4": "--"
     },
     "Sergio Garcia": {
-      "position": 45,
+      "position": 44,
       "cut": false,
       "live": false,
       "toPar": "+3",
