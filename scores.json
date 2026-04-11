@@ -1,6 +1,6 @@
 {
   "currentRound": "R3",
-  "lastUpdated": "17:03 BST",
+  "lastUpdated": "17:51 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -24,30 +24,30 @@
       "r4": "--"
     },
     "Harris English": {
-      "position": 25,
+      "position": 22,
       "cut": false,
       "live": false,
-      "toPar": "E",
+      "toPar": "-1",
       "r1": "73",
       "r2": "71",
       "r3": "--",
       "r4": "--"
     },
     "Charl Schwartzel": {
-      "position": 53,
+      "position": 54,
       "cut": false,
       "live": false,
-      "toPar": "+8",
+      "toPar": "+9",
       "r1": "75",
       "r2": "73",
       "r3": "--",
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 43,
+      "position": 50,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+4",
       "r1": "78",
       "r2": "70",
       "r3": "--",
@@ -74,17 +74,17 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 25,
+      "position": 38,
       "cut": false,
       "live": false,
-      "toPar": "E",
+      "toPar": "+1",
       "r1": "73",
       "r2": "71",
       "r3": "--",
       "r4": "--"
     },
     "Matt Fitzpatrick": {
-      "position": 20,
+      "position": 22,
       "cut": false,
       "live": false,
       "toPar": "-1",
@@ -104,10 +104,10 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 43,
+      "position": 52,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+6",
       "r1": "71",
       "r2": "74",
       "r3": "--",
@@ -124,20 +124,20 @@
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 25,
+      "position": 42,
       "cut": false,
       "live": false,
-      "toPar": "E",
+      "toPar": "+2",
       "r1": "76",
       "r2": "69",
       "r3": "--",
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 43,
+      "position": 42,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+2",
       "r1": "72",
       "r2": "74",
       "r3": "--",
@@ -164,10 +164,10 @@
       "r4": "--"
     },
     "Sergio Garcia": {
-      "position": 39,
+      "position": 46,
       "cut": false,
       "live": false,
-      "toPar": "+2",
+      "toPar": "+3",
       "r1": "72",
       "r2": "75",
       "r3": "--",
