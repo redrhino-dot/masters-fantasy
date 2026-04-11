@@ -260,9 +260,7 @@ async function loadScores(){
     .filter(p=>!p.cut && p.position!=null)
     .map(p=>p.position);
   const cutline = positions.length ? Math.max(...positions) : 999;
-  Object.values(state.players).forEach(p=>{
-    if(p.cut) p.position = cutline + 1;
-  });
+  Object.values(state.players).forEach(p=>{ if(p.cut || p.toPar==='CUT') p.position=55; });
 }
 
     renderAll();
