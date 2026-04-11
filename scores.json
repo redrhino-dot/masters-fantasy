@@ -1,6 +1,6 @@
 {
   "currentRound": "R3",
-  "lastUpdated": "22:30 BST",
+  "lastUpdated": "22:58 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -14,10 +14,10 @@
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 20,
+      "position": 16,
       "cut": false,
       "live": false,
-      "toPar": "-3",
+      "toPar": "-4",
       "r1": "71",
       "r2": "68",
       "r3": "--",
@@ -84,7 +84,7 @@
       "r4": "--"
     },
     "Matt Fitzpatrick": {
-      "position": 20,
+      "position": 21,
       "cut": false,
       "live": false,
       "toPar": "-3",
@@ -114,10 +114,10 @@
       "r4": "--"
     },
     "Cameron Young": {
-      "position": 2,
+      "position": 1,
       "cut": false,
       "live": false,
-      "toPar": "-10",
+      "toPar": "-11",
       "r1": "73",
       "r2": "67",
       "r3": "--",
@@ -154,13 +154,13 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 27,
+      "position": 21,
       "cut": false,
       "live": false,
-      "toPar": "-2",
+      "toPar": "-3",
       "r1": "72",
       "r2": "69",
-      "r3": "--",
+      "r3": "72",
       "r4": "--"
     },
     "Sergio Garcia": {
