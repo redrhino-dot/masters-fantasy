@@ -1,10 +1,10 @@
 {
   "currentRound": "R3",
-  "lastUpdated": "22:58 BST",
+  "lastUpdated": "23:37 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 16,
+      "position": 15,
       "cut": false,
       "live": false,
       "toPar": "-4",
@@ -14,7 +14,7 @@
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 16,
+      "position": 15,
       "cut": false,
       "live": false,
       "toPar": "-4",
@@ -54,13 +54,13 @@
       "r4": "--"
     },
     "Tyrrell Hatton": {
-      "position": 16,
+      "position": 15,
       "cut": false,
       "live": false,
       "toPar": "-4",
       "r1": "74",
       "r2": "66",
-      "r3": "--",
+      "r3": "72",
       "r4": "--"
     },
     "Cameron Smith": {
@@ -114,13 +114,13 @@
       "r4": "--"
     },
     "Cameron Young": {
-      "position": 1,
+      "position": 2,
       "cut": false,
       "live": false,
       "toPar": "-11",
       "r1": "73",
       "r2": "67",
-      "r3": "--",
+      "r3": "65",
       "r4": "--"
     },
     "Marco Penge": {
