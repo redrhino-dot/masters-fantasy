@@ -1,6 +1,6 @@
 {
-  "currentRound": "R3",
-  "lastUpdated": "13:54 BST",
+  "currentRound": "R4",
+  "lastUpdated": "14:56 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -37,7 +37,7 @@
       "position": 54,
       "cut": false,
       "live": false,
-      "toPar": "+9",
+      "toPar": "+12",
       "r1": "75",
       "r2": "73",
       "r3": "77",
@@ -104,10 +104,10 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 52,
+      "position": 53,
       "cut": false,
       "live": false,
-      "toPar": "+7",
+      "toPar": "+8",
       "r1": "71",
       "r2": "74",
       "r3": "78",
@@ -164,10 +164,10 @@
       "r4": "--"
     },
     "Sergio Garcia": {
-      "position": 48,
+      "position": 50,
       "cut": false,
       "live": false,
-      "toPar": "+5",
+      "toPar": "+6",
       "r1": "72",
       "r2": "75",
       "r3": "74",
