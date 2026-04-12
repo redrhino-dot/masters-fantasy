@@ -1,10 +1,10 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "17:36 BST",
+  "lastUpdated": "18:08 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 15,
+      "position": 19,
       "cut": false,
       "live": false,
       "toPar": "-4",
@@ -14,17 +14,17 @@
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 15,
+      "position": 23,
       "cut": false,
       "live": false,
-      "toPar": "-4",
+      "toPar": "-3",
       "r1": "71",
       "r2": "68",
       "r3": "73",
       "r4": "--"
     },
     "Harris English": {
-      "position": 37,
+      "position": 36,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -37,27 +37,27 @@
       "position": 54,
       "cut": false,
       "live": false,
-      "toPar": "+11",
+      "toPar": "+12",
       "r1": "75",
       "r2": "73",
       "r3": "77",
-      "r4": "--"
+      "r4": "75"
     },
     "Jon Rahm": {
-      "position": 42,
+      "position": 36,
       "cut": false,
       "live": false,
-      "toPar": "+1",
+      "toPar": "E",
       "r1": "78",
       "r2": "70",
       "r3": "73",
       "r4": "--"
     },
     "Tyrrell Hatton": {
-      "position": 15,
+      "position": 12,
       "cut": false,
       "live": false,
-      "toPar": "-4",
+      "toPar": "-5",
       "r1": "74",
       "r2": "66",
       "r3": "72",
@@ -74,7 +74,7 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 37,
+      "position": 36,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -84,10 +84,10 @@
       "r4": "--"
     },
     "Matt Fitzpatrick": {
-      "position": 23,
+      "position": 27,
       "cut": false,
       "live": false,
-      "toPar": "-3",
+      "toPar": "-2",
       "r1": "74",
       "r2": "69",
       "r3": "70",
@@ -104,14 +104,14 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 49,
+      "position": 47,
       "cut": false,
       "live": false,
       "toPar": "+5",
       "r1": "71",
       "r2": "74",
       "r3": "78",
-      "r4": "--"
+      "r4": "70"
     },
     "Cameron Young": {
       "position": 1,
@@ -127,14 +127,14 @@
       "position": 46,
       "cut": false,
       "live": false,
-      "toPar": "+2",
+      "toPar": "+3",
       "r1": "76",
       "r2": "69",
       "r3": "71",
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 42,
+      "position": 44,
       "cut": false,
       "live": false,
       "toPar": "+1",
