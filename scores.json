@@ -1,10 +1,10 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "19:27 BST",
+  "lastUpdated": "19:54 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 14,
+      "position": 15,
       "cut": false,
       "live": false,
       "toPar": "-5",
@@ -14,10 +14,10 @@
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 33,
+      "position": 28,
       "cut": false,
       "live": false,
-      "toPar": "-1",
+      "toPar": "-2",
       "r1": "71",
       "r2": "68",
       "r3": "73",
@@ -44,7 +44,7 @@
       "r4": "75"
     },
     "Jon Rahm": {
-      "position": 41,
+      "position": 40,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -54,7 +54,7 @@
       "r4": "68"
     },
     "Tyrrell Hatton": {
-      "position": 8,
+      "position": 10,
       "cut": false,
       "live": false,
       "toPar": "-7",
@@ -84,10 +84,10 @@
       "r4": "69"
     },
     "Matt Fitzpatrick": {
-      "position": 24,
+      "position": 18,
       "cut": false,
       "live": false,
-      "toPar": "-3",
+      "toPar": "-4",
       "r1": "74",
       "r2": "69",
       "r3": "70",
@@ -124,20 +124,20 @@
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 48,
+      "position": 49,
       "cut": false,
       "live": false,
-      "toPar": "+5",
+      "toPar": "+6",
       "r1": "76",
       "r2": "69",
       "r3": "71",
-      "r4": "--"
+      "r4": "78"
     },
     "Samuel Stevens": {
-      "position": 33,
+      "position": 28,
       "cut": false,
       "live": false,
-      "toPar": "-1",
+      "toPar": "-2",
       "r1": "72",
       "r2": "74",
       "r3": "70",
@@ -154,7 +154,7 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 27,
+      "position": 28,
       "cut": false,
       "live": false,
       "toPar": "-2",
