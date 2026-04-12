@@ -1,6 +1,6 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "22:48 BST",
+  "lastUpdated": "23:17 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -44,7 +44,7 @@
       "r4": "75"
     },
     "Jon Rahm": {
-      "position": 39,
+      "position": 38,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -54,7 +54,7 @@
       "r4": "68"
     },
     "Tyrrell Hatton": {
-      "position": 2,
+      "position": 4,
       "cut": false,
       "live": false,
       "toPar": "-10",
@@ -114,7 +114,7 @@
       "r4": "70"
     },
     "Cameron Young": {
-      "position": 2,
+      "position": 4,
       "cut": false,
       "live": false,
       "toPar": "-10",
@@ -134,7 +134,7 @@
       "r4": "78"
     },
     "Samuel Stevens": {
-      "position": 25,
+      "position": 24,
       "cut": false,
       "live": false,
       "toPar": "-2",
@@ -154,7 +154,7 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 25,
+      "position": 24,
       "cut": false,
       "live": false,
       "toPar": "-2",
