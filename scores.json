@@ -1,6 +1,6 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "14:56 BST",
+  "lastUpdated": "15:39 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -47,7 +47,7 @@
       "position": 48,
       "cut": false,
       "live": false,
-      "toPar": "+5",
+      "toPar": "+4",
       "r1": "78",
       "r2": "70",
       "r3": "73",
@@ -77,7 +77,7 @@
       "position": 44,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+2",
       "r1": "73",
       "r2": "71",
       "r3": "75",
@@ -104,10 +104,10 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 53,
+      "position": 50,
       "cut": false,
       "live": false,
-      "toPar": "+8",
+      "toPar": "+6",
       "r1": "71",
       "r2": "74",
       "r3": "78",
@@ -124,7 +124,7 @@
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 36,
+      "position": 37,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -134,7 +134,7 @@
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 36,
+      "position": 37,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -164,10 +164,10 @@
       "r4": "--"
     },
     "Sergio Garcia": {
-      "position": 50,
+      "position": 52,
       "cut": false,
       "live": false,
-      "toPar": "+6",
+      "toPar": "+8",
       "r1": "72",
       "r2": "75",
       "r3": "74",
