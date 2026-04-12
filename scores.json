@@ -1,33 +1,33 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "18:08 BST",
+  "lastUpdated": "18:51 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 19,
+      "position": 9,
       "cut": false,
       "live": false,
-      "toPar": "-4",
+      "toPar": "-6",
       "r1": "70",
       "r2": "72",
       "r3": "70",
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 23,
+      "position": 26,
       "cut": false,
       "live": false,
-      "toPar": "-3",
+      "toPar": "-2",
       "r1": "71",
       "r2": "68",
       "r3": "73",
       "r4": "--"
     },
     "Harris English": {
-      "position": 36,
+      "position": 42,
       "cut": false,
       "live": false,
-      "toPar": "E",
+      "toPar": "+1",
       "r1": "73",
       "r2": "71",
       "r3": "71",
@@ -44,20 +44,20 @@
       "r4": "75"
     },
     "Jon Rahm": {
-      "position": 36,
+      "position": 42,
       "cut": false,
       "live": false,
-      "toPar": "E",
+      "toPar": "+1",
       "r1": "78",
       "r2": "70",
       "r3": "73",
-      "r4": "--"
+      "r4": "68"
     },
     "Tyrrell Hatton": {
-      "position": 12,
+      "position": 16,
       "cut": false,
       "live": false,
-      "toPar": "-5",
+      "toPar": "-4",
       "r1": "74",
       "r2": "66",
       "r3": "72",
@@ -74,17 +74,17 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 36,
+      "position": 37,
       "cut": false,
       "live": false,
       "toPar": "E",
       "r1": "73",
       "r2": "71",
       "r3": "75",
-      "r4": "--"
+      "r4": "69"
     },
     "Matt Fitzpatrick": {
-      "position": 27,
+      "position": 26,
       "cut": false,
       "live": false,
       "toPar": "-2",
@@ -104,7 +104,7 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 47,
+      "position": 48,
       "cut": false,
       "live": false,
       "toPar": "+5",
@@ -124,20 +124,20 @@
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 46,
+      "position": 50,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+7",
       "r1": "76",
       "r2": "69",
       "r3": "71",
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 44,
+      "position": 37,
       "cut": false,
       "live": false,
-      "toPar": "+1",
+      "toPar": "E",
       "r1": "72",
       "r2": "74",
       "r3": "70",
@@ -154,7 +154,7 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 23,
+      "position": 24,
       "cut": false,
       "live": false,
       "toPar": "-3",
@@ -171,7 +171,7 @@
       "r1": "72",
       "r2": "75",
       "r3": "74",
-      "r4": "--"
+      "r4": "75"
     }
   }
 }
