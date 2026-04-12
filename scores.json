@@ -1,33 +1,33 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "18:51 BST",
+  "lastUpdated": "19:27 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 9,
+      "position": 14,
       "cut": false,
       "live": false,
-      "toPar": "-6",
+      "toPar": "-5",
       "r1": "70",
       "r2": "72",
       "r3": "70",
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 26,
+      "position": 33,
       "cut": false,
       "live": false,
-      "toPar": "-2",
+      "toPar": "-1",
       "r1": "71",
       "r2": "68",
       "r3": "73",
       "r4": "--"
     },
     "Harris English": {
-      "position": 42,
+      "position": 33,
       "cut": false,
       "live": false,
-      "toPar": "+1",
+      "toPar": "-1",
       "r1": "73",
       "r2": "71",
       "r3": "71",
@@ -44,7 +44,7 @@
       "r4": "75"
     },
     "Jon Rahm": {
-      "position": 42,
+      "position": 41,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -54,10 +54,10 @@
       "r4": "68"
     },
     "Tyrrell Hatton": {
-      "position": 16,
+      "position": 8,
       "cut": false,
       "live": false,
-      "toPar": "-4",
+      "toPar": "-7",
       "r1": "74",
       "r2": "66",
       "r3": "72",
@@ -84,10 +84,10 @@
       "r4": "69"
     },
     "Matt Fitzpatrick": {
-      "position": 26,
+      "position": 24,
       "cut": false,
       "live": false,
-      "toPar": "-2",
+      "toPar": "-3",
       "r1": "74",
       "r2": "69",
       "r3": "70",
@@ -124,20 +124,20 @@
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 50,
+      "position": 48,
       "cut": false,
       "live": false,
-      "toPar": "+7",
+      "toPar": "+5",
       "r1": "76",
       "r2": "69",
       "r3": "71",
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 37,
+      "position": 33,
       "cut": false,
       "live": false,
-      "toPar": "E",
+      "toPar": "-1",
       "r1": "72",
       "r2": "74",
       "r3": "70",
@@ -154,10 +154,10 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 24,
+      "position": 27,
       "cut": false,
       "live": false,
-      "toPar": "-3",
+      "toPar": "-2",
       "r1": "72",
       "r2": "69",
       "r3": "72",
