@@ -1,6 +1,6 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "21:35 BST",
+  "lastUpdated": "22:05 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -14,17 +14,17 @@
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 27,
+      "position": 35,
       "cut": false,
       "live": false,
-      "toPar": "-2",
+      "toPar": "E",
       "r1": "71",
       "r2": "68",
       "r3": "73",
-      "r4": "--"
+      "r4": "76"
     },
     "Harris English": {
-      "position": 34,
+      "position": 33,
       "cut": false,
       "live": false,
       "toPar": "-1",
@@ -44,7 +44,7 @@
       "r4": "75"
     },
     "Jon Rahm": {
-      "position": 40,
+      "position": 39,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -54,14 +54,14 @@
       "r4": "68"
     },
     "Tyrrell Hatton": {
-      "position": 4,
+      "position": 2,
       "cut": false,
       "live": false,
       "toPar": "-10",
       "r1": "74",
       "r2": "66",
       "r3": "72",
-      "r4": "--"
+      "r4": "66"
     },
     "Cameron Smith": {
       "position": null,
@@ -74,7 +74,7 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 36,
+      "position": 35,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -84,7 +84,7 @@
       "r4": "69"
     },
     "Matt Fitzpatrick": {
-      "position": 19,
+      "position": 18,
       "cut": false,
       "live": false,
       "toPar": "-4",
@@ -117,7 +117,7 @@
       "position": 2,
       "cut": false,
       "live": false,
-      "toPar": "-11",
+      "toPar": "-10",
       "r1": "73",
       "r2": "67",
       "r3": "65",
@@ -134,7 +134,7 @@
       "r4": "78"
     },
     "Samuel Stevens": {
-      "position": 27,
+      "position": 26,
       "cut": false,
       "live": false,
       "toPar": "-2",
@@ -154,7 +154,7 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 27,
+      "position": 26,
       "cut": false,
       "live": false,
       "toPar": "-2",
