@@ -1,20 +1,20 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "22:05 BST",
+  "lastUpdated": "22:48 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
-      "position": 7,
+      "position": 9,
       "cut": false,
       "live": false,
       "toPar": "-8",
       "r1": "70",
       "r2": "72",
       "r3": "70",
-      "r4": "--"
+      "r4": "68"
     },
     "Tommy Fleetwood": {
-      "position": 35,
+      "position": 33,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -24,7 +24,7 @@
       "r4": "76"
     },
     "Harris English": {
-      "position": 33,
+      "position": 31,
       "cut": false,
       "live": false,
       "toPar": "-1",
@@ -74,7 +74,7 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 35,
+      "position": 33,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -134,7 +134,7 @@
       "r4": "78"
     },
     "Samuel Stevens": {
-      "position": 26,
+      "position": 25,
       "cut": false,
       "live": false,
       "toPar": "-2",
@@ -154,7 +154,7 @@
       "r4": "--"
     },
     "Chris Gotterup": {
-      "position": 26,
+      "position": 25,
       "cut": false,
       "live": false,
       "toPar": "-2",
