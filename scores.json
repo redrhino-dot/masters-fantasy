@@ -1,6 +1,6 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "19:54 BST",
+  "lastUpdated": "20:22 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -14,10 +14,10 @@
       "r4": "--"
     },
     "Tommy Fleetwood": {
-      "position": 28,
+      "position": 33,
       "cut": false,
       "live": false,
-      "toPar": "-2",
+      "toPar": "-1",
       "r1": "71",
       "r2": "68",
       "r3": "73",
@@ -31,7 +31,7 @@
       "r1": "73",
       "r2": "71",
       "r3": "71",
-      "r4": "--"
+      "r4": "72"
     },
     "Charl Schwartzel": {
       "position": 54,
@@ -44,7 +44,7 @@
       "r4": "75"
     },
     "Jon Rahm": {
-      "position": 40,
+      "position": 39,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -54,10 +54,10 @@
       "r4": "68"
     },
     "Tyrrell Hatton": {
-      "position": 10,
+      "position": 9,
       "cut": false,
       "live": false,
-      "toPar": "-7",
+      "toPar": "-6",
       "r1": "74",
       "r2": "66",
       "r3": "72",
@@ -74,7 +74,7 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 37,
+      "position": 36,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -84,7 +84,7 @@
       "r4": "69"
     },
     "Matt Fitzpatrick": {
-      "position": 18,
+      "position": 20,
       "cut": false,
       "live": false,
       "toPar": "-4",
@@ -117,7 +117,7 @@
       "position": 1,
       "cut": false,
       "live": false,
-      "toPar": "-11",
+      "toPar": "-12",
       "r1": "73",
       "r2": "67",
       "r3": "65",
@@ -141,7 +141,7 @@
       "r1": "72",
       "r2": "74",
       "r3": "70",
-      "r4": "--"
+      "r4": "70"
     },
     "Bryson DeChambeau": {
       "position": null,
