@@ -1,6 +1,6 @@
 {
   "currentRound": "R4",
-  "lastUpdated": "16:21 BST",
+  "lastUpdated": "16:55 BST",
   "source": "ESPN HTML",
   "players": {
     "Xander Schauffele": {
@@ -24,7 +24,7 @@
       "r4": "--"
     },
     "Harris English": {
-      "position": 37,
+      "position": 38,
       "cut": false,
       "live": false,
       "toPar": "E",
@@ -44,10 +44,10 @@
       "r4": "--"
     },
     "Jon Rahm": {
-      "position": 46,
+      "position": 45,
       "cut": false,
       "live": false,
-      "toPar": "+3",
+      "toPar": "+2",
       "r1": "78",
       "r2": "70",
       "r3": "73",
@@ -74,10 +74,10 @@
       "r4": "--"
     },
     "Dustin Johnson": {
-      "position": 45,
+      "position": 42,
       "cut": false,
       "live": false,
-      "toPar": "+2",
+      "toPar": "+1",
       "r1": "73",
       "r2": "71",
       "r3": "75",
@@ -104,7 +104,7 @@
       "r4": "--"
     },
     "Aaron Rai": {
-      "position": 51,
+      "position": 50,
       "cut": false,
       "live": false,
       "toPar": "+6",
@@ -124,7 +124,7 @@
       "r4": "--"
     },
     "Marco Penge": {
-      "position": 41,
+      "position": 42,
       "cut": false,
       "live": false,
       "toPar": "+1",
@@ -134,10 +134,10 @@
       "r4": "--"
     },
     "Samuel Stevens": {
-      "position": 37,
+      "position": 42,
       "cut": false,
       "live": false,
-      "toPar": "E",
+      "toPar": "+1",
       "r1": "72",
       "r2": "74",
       "r3": "70",
